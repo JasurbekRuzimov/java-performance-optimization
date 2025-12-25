@@ -49,12 +49,12 @@ public class Main {
       currentDate = currentDate.plusDays(1);
     }
 
-    System.out.println("📝 Writing file...");
+    System.out.println(" Writing file...");
     try (BufferedWriter bw = new BufferedWriter(new FileWriter("activity.txt", true))) {
       bw.write(allContent.toString());
     }
 
-    System.out.println("⚡ Executing " + gitCommands.size() + " commits in parallel...");
+    System.out.println(" Executing " + gitCommands.size() + " commits in parallel...");
     ExecutorService executor = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
 
     int batchSize = 100; // Git add batches
